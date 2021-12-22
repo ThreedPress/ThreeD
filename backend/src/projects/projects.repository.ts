@@ -18,9 +18,9 @@ export class ProjectsRepository {
     return this.projectModel.find(projectFilterQuery);
   }
 
-  async create(threedModel: Project): Promise<Project> {
-    const newThreedModel = new this.projectModel(threedModel);
-    return newThreedModel.save();
+  async create(projectModel: Project): Promise<Project> {
+    const newProject = new this.projectModel(projectModel);
+    return newProject.save();
   }
 
   async findOneAndUpdate(

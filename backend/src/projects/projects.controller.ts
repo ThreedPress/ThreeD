@@ -14,20 +14,21 @@ import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { Project } from './entities/project.entity';
-import { ApiConsumes } from '@nestjs/swagger';
+import { ApiConsumes, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('projects')
 @Controller('projects')
 export class ProjectsController {
   constructor(private readonly projectsService: ProjectsService) {}
 
   @Post('/create')
-  @UseInterceptors(FilesInterceptor('files'))
+  @UseInterceptors(FilesInterceptor('files', 30))
   @ApiConsumes('multipart/form-data')
-  createThreedModel(
+  createProject(
     @UploadedFiles() files: Array<Express.Multer.File>,
     @Body() payload: CreateProjectDto,
   ): Promise<Project> {
-    return this.projectsService.createThreedModel(payload, files);
+    return this.projectsService.createProject(payload, files);
   }
 
   @Get()
@@ -40,10 +41,16 @@ export class ProjectsController {
     return this.projectsService.getProjectById(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateProjectDto: UpdateProjectDto) {
-    return this.projectsService.updateProject(id, updateProjectDto);
-  }
+  // @Patch(':id')
+  // @UseInterceptors(FilesInterceptor('files', 30))
+  // @ApiConsumes('multipart/form-data')
+  // update(
+  //   @Param('id') id: string,
+  //   @UploadedFiles() files: Array<Express.Multer.File>,
+  //   @Body() updateProjectDto: UpdateProjectDto,
+  // ) {
+  //   return this.projectsService.updateProject(id, updateProjectDto, files);
+  // }
 
   // @Delete(':id')
   // remove(@Param('id') id: string) {

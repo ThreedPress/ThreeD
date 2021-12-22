@@ -1,10 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Date, Document } from 'mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 
 export type ProjectDocument = Project & Document;
 
-@Schema()
+@Schema({ timestamps: true })
 export class Project {
   @ApiProperty()
   @Prop()

@@ -46,7 +46,7 @@ export class ProjectsService {
     return projects;
   }
 
-  async createThreedModel(
+  async createProject(
     payload: CreateProjectDto,
     files: Array<Express.Multer.File>,
   ): Promise<Project> {
@@ -72,13 +72,13 @@ export class ProjectsService {
     });
   }
 
-  async updateProject(
-    projectId: string,
-    projectUpdates: UpdateProjectDto,
-  ): Promise<Project> {
-    return this.projectsRepository.findOneAndUpdate(
-      { projectId },
-      projectUpdates,
-    );
-  }
+  // async updateProject(
+  //   projectId: string,
+  //   projectUpdates: UpdateProjectDto,
+  // ): Promise<Project> {
+  //   return this.projectsRepository.findOneAndUpdate(
+  //     { projectId },
+  //     projectUpdates,
+  //   );
+  // }
 }

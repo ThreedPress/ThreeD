@@ -9,7 +9,7 @@ async function bootstrap() {
     .setTitle('Threed API')
     .setDescription('The Threed api description')
     .setVersion('0.1')
-    .addTag('models')
+    .addTag('projects')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

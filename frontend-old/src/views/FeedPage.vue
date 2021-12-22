@@ -20,8 +20,8 @@
             >
               <FeedBox />
             </ion-col>
-          </ion-row>
-        </ion-grid>
+          </ion-row> </ion-grid
+        >:
       </div>
     </ion-content>
   </ion-page>
