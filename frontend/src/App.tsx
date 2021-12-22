@@ -5,16 +5,15 @@ const getData = async () => {
   const response = await fetch(projectsEndpoint);
   return await response.json();
 };
-const ProjectFeed = () => {
+const TodoApp = () => {
   const { data: projects } = useSWR(projectsEndpoint, getData);
-  console.log(projects);
-
-  return (
-    <div className="App">
-      {projects.map((projects) => (
-        <div key={projects.projectId}>{projects.title}</div>
+  
+return (
+    <div>
+      {projects && projects.map(project => (
+        <div key={project.projectId}>{project.title} - {project.category} - {project.description} - {project.tags} - {project.files} </div>
       ))}
     </div>
   );
 };
-export default ProjectFeed;
+export default TodoApp;

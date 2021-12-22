@@ -28,6 +28,7 @@
 </template>
 
 <script lang="ts">
+import axios from "axios";
 import {
   IonContent,
   IonHeader,
@@ -35,9 +36,11 @@ import {
   IonGrid,
   IonRow,
   IonCol,
+  onIonViewWillEnter,
 } from "@ionic/vue";
 import TopBar from "../components/Layout/TopBar.vue";
 import FeedBox from "../components/Feed/FeedBox.vue";
+import { ref } from "vue";
 export default {
   components: {
     IonContent,
@@ -48,6 +51,18 @@ export default {
     IonCol,
     FeedBox,
     TopBar,
+  },
+  setup() {
+    var feedList = ref({});
+    onIonViewWillEnter(() => {
+      feedList.value = getFeed;
+    });
+    const getFeed = () => {
+      axios.get("http://localhost:3000/projects").then((resp) => {
+        console.log(resp);
+        return resp;
+      });
+    };
   },
 };
 </script>
