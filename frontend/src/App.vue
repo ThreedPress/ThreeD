@@ -3,7 +3,11 @@
     <ion-split-pane content-id="main-content">
       <ion-menu content-id="main-content" type="overlay">
         <ion-content>
-          <img id="logo" src="../public/assets/icon/default-monochrome.svg" />
+          <img
+            class="ion-padding-horizontal"
+            id="logo"
+            src="../public/assets/icon/default-monochrome.svg"
+          />
           <ion-list id="inbox-list">
             <ion-menu-toggle
               auto-hide="false"

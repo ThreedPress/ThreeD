@@ -1,5 +1,6 @@
 <template>
   <ion-card>
+    <img src="../../../public/assets/icon/default-monochrome.svg" />
     <ion-card-header>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
       <ion-card-title>Card Title</ion-card-title>

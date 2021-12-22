@@ -10,7 +10,11 @@
         <ion-grid>
           <ion-row>
             <ion-col
-              size="4"
+              sizeXl="3"
+              sizeLg="4"
+              sizeMd="4"
+              sizeSm="12"
+              sizeXs="12"
               v-for="item in [1, 2, 3, 4, 5, 6, 7, 8, 9]"
               :key="item"
             >
