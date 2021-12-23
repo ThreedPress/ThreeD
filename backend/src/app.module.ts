@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProjectsModule } from './projects/projects.module';
 import { AssetsModule } from './assets/assets.module';
+console.log(process.env);
 
 @Module({
   imports: [

@@ -18,15 +18,15 @@ services:
     working_dir: /app
     ports:
       - 5000:3000
-    environment:
-      - MONGODB_HOST=db:27017
+    env_file:
+      - .env.be
     depends_on:
       - db
     volumes:
-      - ../backend/:/backend
+      - ./backend/:/backend
 
   db:
     image: mongo:latest
     restart: always
-    # ports:
-    #   - 27017:27017
+    ports:
+      - 27017:27017
