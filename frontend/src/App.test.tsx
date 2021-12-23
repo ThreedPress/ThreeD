@@ -1,9 +1,11 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App.tsx Tests", () => {
+  test("Renders", () => {
+    render(<App />);
+    const mainElement = screen.getByTestId(/app-root/i);
+    expect(mainElement).toBeInTheDocument();
+  });
 });

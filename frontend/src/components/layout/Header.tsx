@@ -1,7 +1,8 @@
 import { HeaderItem } from "./HeaderItem"
 import { MdGridView, MdAccountCircle, MdAddBox } from "react-icons/md";
+import { FC } from "react";
 
-export const Header = () => {
+export const Header: FC = () => {
     return (
         <header className="flex flex-col sm:flex-row m-5 justify-between items-center">
             <img className="object-contain" src="/logo.svg" alt="Threed Logo" height={100} width={200}></img>
