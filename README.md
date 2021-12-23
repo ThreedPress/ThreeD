@@ -7,8 +7,10 @@
 - An IDE maybe?
 
 ## Development setup
-1. Enter `backend` folder and run `earthly +build-dev-image`
-1. Enter `frontend` folder and run `earthly +build-dev-image`
-1. In the `frontend` folder, run `docker-compose up`
+1. Run `earthly +run-dev`
 1. Congrats! You've got a hot-reloading frontend/backend for development! 🤩
-- Note: newly installed stuff will require a rebuild on the container
+- Note: newly installed stuff will require a rebuild on the container(s)
+
+Frontend accessible at http://localhost:3000
+Backend Swagger UI accessible: http://localhost:5000/api
+MongoDB is not exposed, if needed, uncomment the 2 lines in the docker compose and re-run.

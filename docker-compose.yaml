@@ -11,7 +11,7 @@ services:
     depends_on:
       - api
     volumes:
-      - ./:/app
+      - ./frontend/:/app
 
   api:
     image: threed-press-backend:dev-build
@@ -23,10 +23,10 @@ services:
     depends_on:
       - db
     volumes:
-      - ../backend:/backend
+      - ../backend/:/backend
 
   db:
     image: mongo:latest
     restart: always
-    ports:
-      - 27017:27017
+    # ports:
+    #   - 27017:27017
