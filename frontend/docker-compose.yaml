@@ -1,0 +1,32 @@
+# Use root/example as user/password credentials
+version: '3.1'
+services:
+  web:
+    image: threed-press-frontend:dev-build
+    ports:
+      - 3000:3000
+    environment:
+      CONTAINER: "true"
+      FORCE_COLOR: "true"
+    depends_on:
+      - api
+    volumes:
+      - ./:/app
+
+  api:
+    image: threed-press-backend:dev-build
+    working_dir: /app
+    ports:
+      - 5000:3000
+    environment:
+      - MONGODB_HOST=db:27017
+    depends_on:
+      - db
+    volumes:
+      - ../backend:/backend
+
+  db:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
