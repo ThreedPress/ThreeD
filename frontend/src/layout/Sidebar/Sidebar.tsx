@@ -9,7 +9,7 @@ import {
 
 export const Sidebar = () => {
   return (
-    <div className="flex-col bg-gray-900 border-r border-gray-900 ">
+    <div className="flex-col bg-[#01252c] border-r border-[#01252c] ">
       <div className="flex-col h-screen mx-5 mt-5 overflow-y-scroll">
         <img
           className="object-contain"
@@ -22,7 +22,7 @@ export const Sidebar = () => {
           <SidebarItem title="feed" Icon={MdViewModule} />
           <SidebarItem title="categories" Icon={MdGridView} />
           <SidebarItem title="trending" Icon={MdOutlineLocalFireDepartment} />
-          <hr className="border-t-[0.1px] mr-5" />
+          <hr className="border-t-[0.1px]" />
           <SidebarItem title="create" Icon={MdAddBox} />
           <SidebarItem title="account" Icon={MdAccountCircle} />
         </div>

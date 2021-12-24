@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { Header } from "./Header";
+import { Sidebar } from "./Sidebar";
 
-describe("Header.tsx tests", () => {
-  const headers = ["feed", "profile", "create"];
+describe("Sidebar.tsx tests", () => {
+  const headers = ["feed", "categories", "trending", "create", "account"];
 
   it.each(headers)("renders the $title element", (title: string) => {
-    render(<Header />);
+    render(<Sidebar />);
     const element = screen.getByText(title);
     expect(element).toBeInTheDocument();
   });
